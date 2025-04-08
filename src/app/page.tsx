@@ -128,6 +128,9 @@ export default function Home() {
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-2 max-w-lg">
             Wake up to what matters to you. Select your interests and get a digestable summary of top stories in your inbox every morning.
           </p>
+          <p className="text-base text-gray-600 dark:text-gray-400 mt-2 max-w-lg">
+            Choose from topics like Stocks, Politics, Technology, Crypto, Sports, Startups, and more.
+          </p>
         </div>
 
         <div className="w-full max-w-md bg-white dark:bg-gray-800/80 p-8 rounded-2xl shadow-lg border border-amber-100 dark:border-amber-900/20 relative overflow-hidden">
