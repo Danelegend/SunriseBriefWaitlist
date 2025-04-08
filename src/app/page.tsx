@@ -124,9 +124,9 @@ export default function Home() {
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
             Start Your Day <span className="text-amber-600">Informed</span>
           </h2>
-          <p className="text-xl sm:text-2xl mb-3 font-medium text-gray-800 dark:text-gray-200">Only the News You Care About</p>
+          <p className="text-xl sm:text-2xl mb-3 font-medium text-gray-800 dark:text-gray-200">Top Story Summaries on Topics You Care About</p>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-2 max-w-lg">
-            Wake up to what matters to you. Select your interests, skip the noise and get the news you want.
+            Wake up to what matters to you. Select your interests and get a digestable summary of top stories in your inbox every morning.
           </p>
         </div>
 
