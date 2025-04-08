@@ -3,6 +3,12 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 
+// Define a proper error type
+interface SupabaseError {
+  code?: string;
+  message?: string;
+}
+
 export default function Home() {
   const [formData, setFormData] = useState({
     name: '',
@@ -67,17 +73,20 @@ export default function Home() {
       // Success
       setSubmitStatus({
         success: true,
-        message: 'Thanks for joining! We\'ll be in touch soon.'
+        message: 'Thanks for joining! We&apos;ll be in touch soon.'
       });
       
       // Reset form
       setFormData({ name: '', email: '', interests: '' });
       
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error submitting form:', error);
       
+      // Type guard to check if error is a SupabaseError
+      const supabaseError = error as SupabaseError;
+      
       // Check for duplicate email error from Supabase
-      if (error.code === '23505' || error.message?.includes('duplicate')) {
+      if (supabaseError.code === '23505' || supabaseError.message?.includes('duplicate')) {
         setSubmitStatus({
           success: false,
           message: 'This email is already on our waitlist.'
@@ -224,7 +233,7 @@ export default function Home() {
             </p>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md">
-            Be among the first to experience Sunrise Brief. We'll notify you when your morning briefings are ready. No spam, just updates.
+            Be among the first to experience Sunrise Brief. We&apos;ll notify you when your morning briefings are ready. No spam, just updates.
           </p>
         </div>
       </main>
